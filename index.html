@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0,
+      maximum-scale=1.0, user-scalable=no">
+
+<title>Online Bazar365 | বডি মেসেজ মেশিন</title>
+
+<meta name="description"
+content="বডি মেসেজ মেশিন মাত্র ৮৯০ টাকা। Online Bazar365 থেকে অর্ডার করুন।">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+body{
+    font-family:
+    "Noto Sans Bengali",
+    "Noto Sans",
+    Arial,
+    sans-serif;
+    background:#f4f5f7;
+    color:#222;
+    padding-bottom:75px;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+    height:58px;
+    background:#ffffff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 14px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 1px 8px rgba(0,0,0,.10);
+}
+
+.menu-btn{
+    width:38px;
+    height:38px;
+    border:0;
+    background:#f4f4f4;
+    border-radius:50%;
+    font-size:22px;
+    cursor:pointer;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    font-weight:900;
+    color:#e53935;
+    letter-spacing:-.5px;
+}
+
+.logo span{
+    color:#111;
+}
+
+.logo img{
+    max-width:145px;
+    max-height:42px;
+    object-fit:contain;
+}
+
+.header-cart{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:#f4f4f4;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:19px;
+    position:relative;
+}
+
+.cart-count{
+    position:absolute;
+    right:-3px;
+    top:-3px;
+    width:17px;
+    height:17px;
+    border-radius:50%;
+    background:#e53935;
+    color:white;
+    font-size:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+}
+
+/* ================= MAIN ================= */
+
+.container{
+    width:100%;
+    max-width:650px;
+    margin:auto;
+}
+
+/* ================= PRODUCT IMAGE ================= */
+
+.product-gallery{
+    background:#fff;
+    padding-bottom:12px;
+}
+
+.main-image{
+    width:100%;
+    height:auto;
+    min-height:350px;
+    max-height:580px;
+    background:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.main-image img{
+    width:100%;
+    height:100%;
+    max-height:580px;
+    object-fit:contain;
+    display:block;
+}
+
+.thumbnails{
+    display:flex;
+    gap:8px;
+    padding:10px 10px 3px;
+    overflow-x:auto;
+}
+
+.thumbnails::-webkit-scrollbar{
+    display:none;
+}
+
+.thumb{
+    width:68px;
+    height:68px;
+    flex:0 0 68px;
+    border:2px solid transparent;
+    border-radius:7px;
+    overflow:hidden;
+    background:#f3f3f3;
+    cursor:pointer;
+}
+
+.thumb.active{
+    border-color:#e53935;
+}
+
+.thumb img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* ================= PRODUCT INFO ================= */
+
+.product-info{
+    background:#fff;
+    margin-top:8px;
+    padding:17px 14px;
+}
+
+.product-title{
+    font-size:22px;
+    line-height:1.45;
+    font-weight:800;
+    margin-bottom:9px;
+}
+
+.rating{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-size:14px;
+    color:#777;
+    margin-bottom:12px;
+}
+
+.stars{
+    color:#ffb400;
+    letter-spacing:1px;
+    font-size:17px;
+}
+
+.price-box{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:12px;
+}
+
+.price{
+    font-size:29px;
+    font-weight:900;
+    color:#e53935;
+}
+
+.old-price{
+    color:#999;
+    text-decoration:line-through;
+    font-size:16px;
+}
+
+.discount{
+    background:#ffe8e8;
+    color:#e53935;
+    font-size:12px;
+    font-weight:bold;
+    padding:4px 7px;
+    border-radius:5px;
+}
+
+.stock{
+    background:#ecf9ef;
+    color:#159447;
+    border-radius:5px;
+    padding:8px 10px;
+    font-size:13px;
+    margin-bottom:15px;
+    font-weight:600;
+}
+
+/* ================= QUANTITY ================= */
+
+.quantity-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:15px;
+}
+
+.quantity-label{
+    font-size:15px;
+    font-weight:700;
+}
+
+.quantity{
+    display:flex;
+    align-items:center;
+    border:1px solid #ddd;
+    border-radius:6px;
+    overflow:hidden;
+}
+
+.quantity button{
+    width:38px;
+    height:38px;
+    border:0;
+    background:#f3f3f3;
+    font-size:20px;
+    cursor:pointer;
+}
+
+.quantity input{
+    width:45px;
+    height:38px;
+    border:0;
+    text-align:center;
+    font-size:16px;
+    font-weight:bold;
+    outline:none;
+}
+
+/* ================= BUTTONS ================= */
+
+.action-buttons{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:9px;
+}
+
+.btn{
+    height:49px;
+    border:0;
+    border-radius:6px;
+    color:white;
+    font-size:16px;
+    font-weight:800;
+    cursor:pointer;
+}
+
+.btn-order{
+    background:#7b12b8;
+}
+
+.btn-cart{
+    background:#9c12d1;
+}
+
+.btn-whatsapp{
+    background:#16a05d;
+    grid-column:1 / 3;
+}
+
+.btn-call{
+    background:#ff7200;
+    grid-column:1 / 3;
+}
+
+.btn:active{
+    transform:scale(.98);
+}
+
+/* ================= DELIVERY ================= */
+
+.delivery{
+    margin-top:10px;
+    background:#fff4e5;
+    border:1px solid #ffe0ae;
+    border-radius:7px;
+    padding:11px;
+    font-size:13px;
+    color:#7b4c00;
+}
+
+.delivery strong{
+    color:#5c3900;
+}
+
+/* ================= FEATURES ================= */
+
+.features{
+    background:#fff;
+    margin-top:8px;
+    padding:15px 10px;
+}
+
+.features-title{
+    font-size:18px;
+    font-weight:800;
+    margin-bottom:12px;
+    padding-left:4px;
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:7px;
+}
+
+.feature{
+    background:#f8f8f8;
+    border-radius:7px;
+    padding:12px 5px;
+    text-align:center;
+    font-size:12px;
+    font-weight:700;
+}
+
+.feature-icon{
+    display:block;
+    font-size:22px;
+    margin-bottom:5px;
+}
+
+/* ================= TABS ================= */
+
+.tabs{
+    margin-top:8px;
+    background:#fff;
+}
+
+.tab-buttons{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    border-bottom:1px solid #ddd;
+}
+
+.tab-btn{
+    height:48px;
+    border:0;
+    background:#fff;
+    font-size:14px;
+    font-weight:700;
+    color:#777;
+    cursor:pointer;
+}
+
+.tab-btn.active{
+    color:#e53935;
+    border-bottom:2px solid #e53935;
+}
+
+.tab-content{
+    padding:17px 14px;
+    line-height:1.8;
+    font-size:14px;
+}
+
+.tab-panel{
+    display:none;
+}
+
+.tab-panel.active{
+    display:block;
+}
+
+.description-title{
+    font-size:19px;
+    font-weight:800;
+    margin-bottom:10px;
+}
+
+.description-list{
+    padding-left:20px;
+}
+
+.description-list li{
+    margin-bottom:7px;
+}
+
+/* ================= REVIEW ================= */
+
+.review-box{
+    text-align:center;
+    padding:25px 10px;
+    color:#777;
+}
+
+.review-icon{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+/* ================= RELATED ================= */
+
+.related{
+    background:#fff;
+    margin-top:8px;
+    padding:16px 12px;
+}
+
+.related-title{
+    font-size:18px;
+    font-weight:800;
+    margin-bottom:13px;
+}
+
+.related-card{
+    border:1px solid #eee;
+    border-radius:8px;
+    overflow:hidden;
+    background:#fff;
+}
+
+.related-card img{
+    width:100%;
+    height:190px;
+    object-fit:cover;
+}
+
+.related-info{
+    padding:10px;
+}
+
+.related-name{
+    font-weight:700;
+    font-size:14px;
+}
+
+.related-price{
+    color:#e53935;
+    font-weight:900;
+    margin-top:5px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    background:#181818;
+    color:#fff;
+    text-align:center;
+    padding:25px 15px;
+    margin-top:8px;
+}
+
+.footer-logo{
+    font-size:20px;
+    font-weight:900;
+    margin-bottom:7px;
+}
+
+.footer p{
+    color:#bbb;
+    font-size:12px;
+    line-height:1.8;
+}
+
+/* ================= STICKY BOTTOM ================= */
+
+.bottom-bar{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    height:66px;
+    background:#fff;
+    border-top:1px solid #ddd;
+    box-shadow:0 -2px 12px rgba(0,0,0,.12);
+    z-index:2000;
+    display:grid;
+    grid-template-columns:58px 1fr 1.35fr;
+    gap:6px;
+    padding:7px;
+}
+
+.bottom-btn{
+    border:0;
+    border-radius:6px;
+    color:#fff;
+    font-size:13px;
+    font-weight:800;
+    cursor:pointer;
+}
+
+.bottom-cart{
+    background:#8b12bd;
+}
+
+.bottom-whatsapp{
+    background:#16a05d;
+}
+
+.bottom-order{
+    background:#e53935;
+}
+
+/* ================= WHATSAPP FLOAT ================= */
+
+.whatsapp-float{
+    position:fixed;
+    right:15px;
+    bottom:82px;
+    width:52px;
+    height:52px;
+    background:#19ad61;
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:27px;
+    box-shadow:0 3px 12px rgba(0,0,0,.25);
+    z-index:1500;
+}
+
+/* ================= ORDER MODAL ================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    z-index:5000;
+    display:none;
+    align-items:flex-end;
+    justify-content:center;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    width:100%;
+    max-width:650px;
+    background:#fff;
+    border-radius:17px 17px 0 0;
+    padding:20px 15px 25px;
+    max-height:90vh;
+    overflow-y:auto;
+    animation:slideUp .25s ease;
+}
+
+@keyframes slideUp{
+    from{
+        transform:translateY(100%);
+    }
+    to{
+        transform:translateY(0);
+    }
+}
+
+.modal-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:17px;
+}
+
+.modal-title{
+    font-size:20px;
+    font-weight:900;
+}
+
+.close{
+    border:0;
+    background:#eee;
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    font-size:20px;
+}
+
+.form-group{
+    margin-bottom:12px;
+}
+
+.form-group label{
+    display:block;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:6px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+    width:100%;
+    border:1px solid #ddd;
+    border-radius:6px;
+    padding:12px;
+    font-family:inherit;
+    font-size:14px;
+    outline:none;
+}
+
+.form-group textarea{
+    min-height:80px;
+    resize:none;
+}
+
+.order-summary{
+    background:#f7f7f7;
+    padding:12px;
+    border-radius:7px;
+    margin-bottom:13px;
+    font-size:14px;
+    line-height:1.8;
+}
+
+.total{
+    color:#e53935;
+    font-size:18px;
+    font-weight:900;
+}
+
+.submit-order{
+    width:100%;
+    height:50px;
+    background:#e53935;
+    color:#fff;
+    border:0;
+    border-radius:7px;
+    font-size:16px;
+    font-weight:900;
+}
+
+/* ================= DESKTOP ================= */
+
+@media(min-width:700px){
+
+    body{
+        padding-bottom:0;
+    }
+
+    .header{
+        position:sticky;
+    }
+
+    .main-image{
+        max-height:600px;
+    }
+
+    .bottom-bar{
+        display:none;
+    }
+
+    .whatsapp-float{
+        bottom:25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <button class="menu-btn" onclick="showMenu()">
+        ☰
+    </button>
+
+    <div class="logo">
+        <!-- logo.png থাকলে নিচের img চালু করুন -->
+        <!-- <img src="logo.png" alt="Online Bazar365"> -->
+
+        Online <span>Bazar365</span>
+    </div>
+
+    <div class="header-cart" onclick="openOrder()">
+        🛒
+        <span class="cart-count" id="cartCount">0</span>
+    </div>
+
+</header>
+
+
+<main class="container">
+
+<!-- ================= PRODUCT GALLERY ================= -->
+
+<section class="product-gallery">
+
+    <div class="main-image">
+        <img id="mainImage"
+             src="product1.jpg"
+             alt="বডি মেসেজ মেশিন">
+    </div>
+
+    <div class="thumbnails">
+
+        <div class="thumb active"
+             onclick="changeImage('product1.jpg',this)">
+            <img src="product1.jpg" alt="">
+        </div>
+
+        <div class="thumb"
+             onclick="changeImage('product2.jpg',this)">
+            <img src="product2.jpg" alt="">
+        </div>
+
+        <div class="thumb"
+             onclick="changeImage('product3.jpg',this)">
+            <img src="product3.jpg" alt="">
+        </div>
+
+        <div class="thumb"
+             onclick="changeImage('product4.jpg',this)">
+            <img src="product4.jpg" alt="">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PRODUCT INFO ================= -->
+
+<section class="product-info">
+
+    <h1 class="product-title">
+        বডি মেসেজ মেশিন – ঘরে বসেই আরামদায়ক ম্যাসাজ
+    </h1>
+
+    <div class="rating">
+        <span class="stars">★★★★★</span>
+        <span>কাস্টমার রিভিউ</span>
+    </div>
+
+    <div class="price-box">
+
+        <span class="price">
+            ৳ ৮৯০
+        </span>
+
+        <span class="old-price">
+            ৳ ১,২০০
+        </span>
+
+        <span class="discount">
+            অফার
+        </span>
+
+    </div>
+
+    <div class="stock">
+        ✓ স্টকে আছে — আজই অর্ডার করুন
+    </div>
+
+
+    <!-- Quantity -->
+
+    <div class="quantity-row">
+
+        <div class="quantity-label">
+            পরিমাণ:
+        </div>
+
+        <div class="quantity">
+
+            <button onclick="changeQty(-1)">
+                −
+            </button>
+
+            <input
+                type="number"
+                id="quantity"
+                value="1"
+                min="1"
+                readonly>
+
+            <button onclick="changeQty(1)">
+                +
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Action Buttons -->
+
+    <div class="action-buttons">
+
+        <button class="btn btn-order"
+                onclick="openOrder()">
+            🛍️ এখনই অর্ডার
+        </button>
+
+        <button class="btn btn-cart"
+                onclick="addCart()">
+            🛒 ADD TO CART
+        </button>
+
+        <button class="btn btn-call"
+                onclick="callNow()">
+            ☎️ +8801645444350
+        </button>
+
+        <button class="btn btn-whatsapp"
+                onclick="whatsappOrder()">
+            💬 WhatsApp এ অর্ডার করুন
+        </button>
+
+    </div>
+
+
+    <div class="delivery">
+        🚚 <strong>সারা বাংলাদেশে ডেলিভারি সুবিধা রয়েছে</strong><br>
+        অর্ডার কনফার্ম করতে আপনার নাম, মোবাইল ও ঠিকানা দিন।
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features">
+
+    <div class="features-title">
+        পণ্যের বিশেষ সুবিধা
+    </div>
+
+    <div class="feature-grid">
+
+        <div class="feature">
+            <span class="feature-icon">💆</span>
+            আরামদায়ক<br>ম্যাসাজ
+        </div>
+
+        <div class="feature">
+            <span class="feature-icon">⚡</span>
+            একাধিক<br>স্পিড মোড
+        </div>
+
+        <div class="feature">
+            <span class="feature-icon">🏠</span>
+            ঘরে বসেই<br>ব্যবহার
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TABS ================= -->
+
+<section class="tabs">
+
+    <div class="tab-buttons">
+
+        <button class="tab-btn active"
+                onclick="showTab('description',this)">
+            বিস্তারিত
+        </button>
+
+        <button class="tab-btn"
+                onclick="showTab('reviews',this)">
+            Reviews (0)
+        </button>
+
+    </div>
+
+
+    <div class="tab-content">
+
+        <!-- Description -->
+
+        <div class="tab-panel active"
+             id="description">
+
+            <div class="description-title">
+                বিস্তারিত
+            </div>
+
+            <p>
+                বডি মেসেজ মেশিন আপনার দৈনন্দিন শরীরের ক্লান্তি ও
+                পেশির আরামদায়ক ম্যাসাজের জন্য ব্যবহার করতে পারেন।
+            </p>
+
+            <br>
+
+            <ul class="description-list">
+
+                <li>
+                    ঘাড়, পিঠ, কোমর ও শরীরের বিভিন্ন স্থানে ব্যবহারযোগ্য
+                </li>
+
+                <li>
+                    একাধিক স্পিড মোড
+                </li>
+
+                <li>
+                    সহজে ব্যবহার করা যায়
+                </li>
+
+                <li>
+                    বাসায় বসেই ম্যাসাজের সুবিধা
+                </li>
+
+                <li>
+                    হালকা ও ব্যবহারবান্ধব ডিজাইন
+                </li>
+
+                <li>
+                    নারী ও পুরুষ উভয়ের জন্য ব্যবহারযোগ্য
+                </li>
+
+            </ul>
+
+            <br>
+
+            <strong>
+                💰 বিশেষ অফার মূল্য: মাত্র ৮৯০ টাকা
+            </strong>
+
+        </div>
+
+
+        <!-- Reviews -->
+
+        <div class="tab-panel"
+             id="reviews">
+
+            <div class="review-box">
+
+                <div class="review-icon">
+                    ⭐
+                </div>
+
+                <h3>
+                    Customer Reviews (0)
+                </h3>
+
+                <p>
+                    এই পণ্যের এখনো কোনো রিভিউ নেই।
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= RELATED PRODUCT ================= -->
+
+<section class="related">
+
+    <div class="related-title">
+        Related Product
+    </div>
+
+    <div class="related-card">
+
+        <img src="product1.jpg"
+             alt="বডি মেসেজ মেশিন">
+
+        <div class="related-info">
+
+            <div class="related-name">
+                বডি মেসেজ মেশিন
+            </div>
+
+            <div class="related-price">
+                ৳ ৮৯০
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-logo">
+        Online Bazar365
+    </div>
+
+    <p>
+        আপনার বিশ্বস্ত অনলাইন শপ
+    </p>
+
+    <p>
+        যোগাযোগ:
+        +8801645444350
+    </p>
+
+    <p>
+        © 2026 Online Bazar365
+    </p>
+
+</footer>
+
+</main>
+
+
+<!-- ================= FLOATING WHATSAPP ================= -->
+
+<a class="whatsapp-float"
+   href="https://wa.me/8801645444350"
+   target="_blank">
+    ☎
+</a>
+
+
+<!-- ================= BOTTOM BAR ================= -->
+
+<div class="bottom-bar">
+
+    <button class="bottom-btn bottom-cart"
+            onclick="addCart()">
+        🛒
+    </button>
+
+    <button class="bottom-btn bottom-whatsapp"
+            onclick="whatsappOrder()">
+        WhatsApp
+    </button>
+
+    <button class="bottom-btn bottom-order"
+            onclick="openOrder()">
+        এখনই অর্ডার করুন
+    </button>
+
+</div>
+
+
+<!-- ================= ORDER MODAL ================= -->
+
+<div class="modal" id="orderModal">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <div class="modal-title">
+                অর্ডার করুন
+            </div>
+
+            <button class="close"
+                    onclick="closeOrder()">
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="order-summary">
+
+            পণ্য:
+            <strong>বডি মেসেজ মেশিন</strong>
+
+            <br>
+
+            মূল্য:
+            <strong>৳ ৮৯০</strong>
+
+            <br>
+
+            পরিমাণ:
+            <strong id="summaryQty">1</strong>
+
+            <br>
+
+            মোট:
+            <span class="total"
+                  id="summaryTotal">
+                ৳ ৮৯০
+            </span>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                আপনার নাম *
+            </label>
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="আপনার নাম লিখুন">
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                মোবাইল নম্বর *
+            </label>
+
+            <input
+                type="tel"
+                id="customerPhone"
+                placeholder="01XXXXXXXXX">
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                সম্পূর্ণ ঠিকানা *
+            </label>
+
+            <textarea
+                id="customerAddress"
+                placeholder="বাড়ি/গ্রাম, ইউনিয়ন, থানা, জেলা"></textarea>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                ডেলিভারি এলাকা
+            </label>
+
+            <select id="deliveryArea">
+
+                <option value="ঢাকার ভিতরে">
+                    ঢাকার ভিতরে
+                </option>
+
+                <option value="ঢাকার বাইরে">
+                    ঢাকার বাইরে
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button class="submit-order"
+                onclick="submitOrder()">
+            📦 WhatsApp-এ অর্ডার কনফার্ম করুন
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* ================= SETTINGS ================= */
+
+const PHONE = "8801645444350";
+const PRODUCT = "বডি মেসেজ মেশিন";
+const PRICE = 890;
+
+
+/* ================= IMAGE ================= */
+
+function changeImage(src, element){
+
+    document.getElementById("mainImage").src = src;
+
+    document.querySelectorAll(".thumb")
+    .forEach(item => {
+        item.classList.remove("active");
+    });
+
+    element.classList.add("active");
+}
+
+
+/* ================= QUANTITY ================= */
+
+function changeQty(amount){
+
+    const input =
+        document.getElementById("quantity");
+
+    let qty =
+        parseInt(input.value) + amount;
+
+    if(qty < 1){
+        qty = 1;
+    }
+
+    input.value = qty;
+
+    updateSummary();
+}
+
+
+/* ================= CART ================= */
+
+function addCart(){
+
+    const qty =
+        parseInt(
+            document.getElementById("quantity").value
+        );
+
+    document.getElementById("cartCount")
+        .innerText = qty;
+
+    alert(
+        "🛒 কার্টে " +
+        qty +
+        " টি পণ্য যোগ হয়েছে।"
+    );
+}
+
+
+/* ================= ORDER MODAL ================= */
+
+function openOrder(){
+
+    updateSummary();
+
+    document
+        .getElementById("orderModal")
+        .classList.add("show");
+}
+
+
+function closeOrder(){
+
+    document
+        .getElementById("orderModal")
+        .classList.remove("show");
+}
+
+
+function updateSummary(){
+
+    const qty =
+        parseInt(
+            document.getElementById("quantity").value
+        );
+
+    const total = PRICE * qty;
+
+    document.getElementById("summaryQty")
+        .innerText = qty;
+
+    document.getElementById("summaryTotal")
+        .innerText =
+        "৳ " + total.toLocaleString("bn-BD");
+}
+
+
+/* ================= WHATSAPP DIRECT ================= */
+
+function whatsappOrder(){
+
+    const qty =
+        parseInt(
+            document.getElementById("quantity").value
+        );
+
+    const total = PRICE * qty;
+
+    const message =
+`আসসালামু আলাইকুম।
+
+আমি একটি পণ্য অর্ডার করতে চাই।
+
+🛍️ পণ্য: ${PRODUCT}
+📦 পরিমাণ: ${qty} টি
+💰 মূল্য: ৳${total}
+
+Online Bazar365`;
+
+    window.open(
+        "https://wa.me/" +
+        PHONE +
+        "?text=" +
+        encodeURIComponent(message),
+        "_blank"
+    );
+}
+
+
+/* ================= SUBMIT ORDER ================= */
+
+function submitOrder(){
+
+    const name =
+        document
+        .getElementById("customerName")
+        .value.trim();
+
+    const phone =
+        document
+        .getElementById("customerPhone")
+        .value.trim();
+
+    const address =
+        document
+        .getElementById("customerAddress")
+        .value.trim();
+
+    const area =
+        document
+        .getElementById("deliveryArea")
+        .value;
+
+    const qty =
+        parseInt(
+            document.getElementById("quantity").value
+        );
+
+    if(!name){
+
+        alert("দয়া করে আপনার নাম লিখুন।");
+        return;
+
+    }
+
+    if(!phone){
+
+        alert("দয়া করে মোবাইল নম্বর লিখুন।");
+        return;
+
+    }
+
+    if(!address){
+
+        alert("দয়া করে সম্পূর্ণ ঠিকানা লিখুন।");
+        return;
+
+    }
+
+
+    const total = PRICE * qty;
+
+
+    const message =
+`🛍️ নতুন অর্ডার
+
+🏪 Online Bazar365
+
+📦 পণ্য: ${PRODUCT}
+🔢 পরিমাণ: ${qty} টি
+💰 মোট মূল্য: ৳${total}
+
+👤 কাস্টমারের নাম:
+${name}
+
+📱 মোবাইল:
+${phone}
+
+📍 ঠিকানা:
+${address}
+
+🚚 ডেলিভারি:
+${area}
+
+দয়া করে অর্ডারটি কনফার্ম করুন।`;
+
+
+    window.open(
+        "https://wa.me/" +
+        PHONE +
+        "?text=" +
+        encodeURIComponent(message),
+        "_blank"
+    );
+
+}
+
+
+/* ================= CALL ================= */
+
+function callNow(){
+
+    window.location.href =
+        "tel:+8801645444350";
+
+}
+
+
+/* ================= TABS ================= */
+
+function showTab(tab, element){
+
+    document
+        .querySelectorAll(".tab-panel")
+        .forEach(panel => {
+
+            panel.classList.remove("active");
+
+        });
+
+
+    document
+        .querySelectorAll(".tab-btn")
+        .forEach(btn => {
+
+            btn.classList.remove("active");
+
+        });
+
+
+    document
+        .getElementById(tab)
+        .classList.add("active");
+
+    element.classList.add("active");
+
+}
+
+
+/* ================= MENU ================= */
+
+function showMenu(){
+
+    alert(
+        "Online Bazar365\n\n" +
+        "বডি মেসেজ মেশিন\n" +
+        "মূল্য: ৮৯০ টাকা\n\n" +
+        "যোগাযোগ: +8801645444350"
+    );
+
+}
+
+
+/* ================= CLOSE MODAL OUTSIDE ================= */
+
+document
+.getElementById("orderModal")
+.addEventListener("click", function(e){
+
+    if(e.target === this){
+        closeOrder();
+    }
+
+});
+
+
+</script>
+
+</body>
+</html>
